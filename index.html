@@ -3,32 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pietro Sanguanini | Scultore</title>
+    <title>Pietro Sanguanini | Opere</title>
     <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
 
-    <div class="overlay"></div>
+    <div class="hotspots-container">
+        <div class="dot" style="top: 25%; left: 20%;" onclick="openOp('opera1.jpg', 'Madre - Acciaio Corten')"></div>
+        <div class="dot" style="top: 60%; left: 75%;" onclick="openOp('opera2.jpg', 'Archetipo - Bronzo')"></div>
+        <div class="dot" style="top: 15%; left: 60%;" onclick="openOp('opera3.jpg', 'Frammento Bellico')"></div>
+        <div class="dot" style="top: 80%; left: 30%;" onclick="openOp('opera4.jpg', 'Sacralità')"></div>
+    </div>
 
     <header>
-        <img src="assets/ps.png" alt="Logo Pietro Sanguanini" class="logo">
+        <img src="assets/ps.png" alt="Logo PS" class="logo">
     </header>
 
-    <main class="content">
-        <section class="card">
-            <h2>L'Archetipo della Madre</h2>
-            <p>La scultura di Sanguanini esplora la "Madre" come simbolo di origine e accoglienza, trasformando la materia in sacralità.</p>
-            <p>Ogni opera è una sentinella del tempo, una forma che custodisce il silenzio.</p>
-            
-            <a href="assets/catalogo-madri.pdf" target="_blank" class="download-btn">
-                Sfoglia il Catalogo "Madri" (PDF)
-            </a>
-        </section>
+    <main>
+        <div class="main-card">
+            <h2>Pietro Sanguanini</h2>
+            <p>Esplora il background per scoprire le opere della serie <strong>Madri</strong>.</p>
+            <a href="assets/catalogo-madri.pdf" target="_blank" class="btn-pdf">Catalogo Completo (PDF)</a>
+        </div>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Pietro Sanguanini</p>
-    </footer>
+    <div id="modal" class="modal" onclick="this.style.display='none'">
+        <div class="modal-box">
+            <img id="modal-img" src="" alt="Opera">
+            <p id="modal-text"></p>
+            <span class="close-txt">Tocca per chiudere</span>
+        </div>
+    </div>
 
+    <script>
+        function openOp(img, txt) {
+            document.getElementById('modal-img').src = 'assets/' + img;
+            document.getElementById('modal-text').innerText = txt;
+            document.getElementById('modal').style.display = 'flex';
+        }
+    </script>
 </body>
 </html>
