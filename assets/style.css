@@ -1,19 +1,29 @@
-/* Reset e Layout */
-* { margin: 0; padding: 0; box-sizing: border-box; }
+/* Stile con copyright */
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
 
 body {
     font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    /* Sfondo: assicurati che bg.jpg sia nella cartella assets */
     background: url('bg.jpg') no-repeat center center fixed;
     background-size: cover;
     height: 100vh;
     color: #333;
-    overflow: hidden;
+    overflow: hidden; /* Blocca lo scroll per un effetto applicazione */
+    display: flex;
+    flex-direction: column;
 }
 
-/* Punti Gialli Fosforescenti */
+/* STRATO PUNTI GIALLI FOSFORESCENTI */
 .hotspots-layer {
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100%;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 100%;
     z-index: 1;
 }
 
@@ -21,7 +31,7 @@ body {
     position: absolute;
     width: 8px;
     height: 8px;
-    background: #CCFF00; /* Giallo Fluo */
+    background: #CCFF00; /* Giallo Fluorescente */
     border-radius: 50%;
     cursor: pointer;
     box-shadow: 0 0 10px #CCFF00, 0 0 20px #CCFF00;
@@ -29,31 +39,41 @@ body {
 }
 
 @keyframes glow {
-    from { transform: scale(1); box-shadow: 0 0 10px #CCFF00; }
-    to { transform: scale(1.6); box-shadow: 0 0 25px #CCFF00, 0 0 40px #CCFF00; }
+    from { 
+        transform: scale(1); 
+        box-shadow: 0 0 10px #CCFF00; 
+    }
+    to { 
+        transform: scale(1.6); 
+        box-shadow: 0 0 25px #CCFF00, 0 0 40px #CCFF00; 
+    }
 }
 
-/* Logo */
+/* HEADER E LOGO */
 .logo {
     position: absolute;
-    top: 30px; left: 50%;
+    top: 30px; 
+    left: 50%;
     transform: translateX(-50%);
-    max-width: 180px;
+    max-width: 150px;
     z-index: 10;
+    /* Opzionale: aggiunge un leggero alone fluo al logo */
+    filter: drop-shadow(0 0 5px rgba(204, 255, 0, 0.2));
 }
 
-/* Card Centrale */
+/* CONTENITORE PRINCIPALE */
 .main-container {
-    height: 100vh;
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 20px;
     position: relative;
     z-index: 5;
-    pointer-events: none; /* Lascia passare i click ai punti sotto */
+    pointer-events: none; /* I click passano ai punti gialli dietro */
 }
 
+/* CARD TESTUALE */
 .card {
     background: rgba(255, 255, 255, 0.92);
     padding: 40px;
@@ -79,6 +99,7 @@ body {
     color: #444;
 }
 
+/* BOTTONE PDF */
 .download-btn {
     display: inline-block;
     margin-top: 20px;
@@ -87,31 +108,4 @@ body {
     color: #fff;
     text-decoration: none;
     font-size: 0.8rem;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    transition: 0.3s;
-}
-
-.download-btn:hover { background: #333; }
-
-/* Modal Pop-up */
-.modal {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.95);
-    z-index: 100;
-    justify-content: center;
-    align-items: center;
-}
-
-.modal-content { text-align: center; width: 90%; }
-.modal-content img { max-width: 100%; max-height: 75vh; border: 1px solid #CCFF00; }
-#img-caption { color: #fff; margin-top: 15px; font-size: 1.1rem; }
-.close-hint { color: #CCFF00; font-size: 0.7rem; margin-top: 20px; display: block; text-transform: uppercase; }
-
-/* Mobile */
-@media (max-width: 600px) {
-    .card { padding: 30px 20px; }
-    .logo { max-width: 130px; top: 20px; }
-}
+    letter-spacing: 1px
