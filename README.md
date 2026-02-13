@@ -1,12 +1,17 @@
-# Pietro Sanguanini - Sito Ufficiale
+# Pietro Sanguanini - Official Web Project
 
-Repository per il sito web dell'artista Pietro Sanguanini.
+Repository dedicato alla presenza digitale dello scultore Pietro Sanguanini. Il sito è progettato per riflettere la solennità e la pulizia formale delle sue opere, con particolare attenzione al progetto "Madri".
 
-## Struttura
-- `index.html`: Struttura principale.
-- `style.css`: Stile e responsive design.
-- `bg.jpg`: Sfondo personalizzato.
-- `ps.png`: Logo dell'artista.
+## Project Architecture
+Per garantire scalabilità e standard professionali, il progetto segue una rigorosa separazione delle risorse:
 
-## Note Tecniche
-Sito ottimizzato per **GitHub Pages**. Il design segue una logica di precisione e pulizia formale, ispirata al catalogo "Madri".
+- **/ (root)**: Contiene il punto di ingresso strutturale (`index.html`).
+- **/assets/css/**: Directory dedicata alla logica di presentazione (Stylesheets).
+- **/assets/images/**: Archiviazione centralizzata del branding visivo (`ps.png`, `bg.jpg`).
+- **/assets/docs/**: Risorse documentali e cataloghi accademici (`catalogo-madri.pdf`).
+
+## Contenuti e Ricerca
+Il sito integra i concetti espressi nel catalogo "Madri", dove la scultura è intesa come archetipo di origine e sacralità.
+
+## Pubblicazione
+Distribuito tramite **GitHub Pages**. Ottimizzato per la visualizzazione mobile.
